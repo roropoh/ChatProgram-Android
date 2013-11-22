@@ -1,11 +1,5 @@
 package com.example.chatprogram;
 
-/*
-
-testing changes
- */
-
-
 import android.app.Activity;
 import android.content.Context;
 import android.net.wifi.WifiManager;
