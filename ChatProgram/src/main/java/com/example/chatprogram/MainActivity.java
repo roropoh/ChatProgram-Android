@@ -29,6 +29,7 @@ public class MainActivity extends Activity
     private MyCustomAdapter mAdapter;
     private TCPClient mTcpClient;
     public BufferedReader br;
+    EditText editText;
 
 
     MulticastSocket socket;
@@ -108,7 +109,7 @@ public class MainActivity extends Activity
 
         arrayList = new ArrayList<String>();
 
-        final EditText editText = (EditText) findViewById(R.id.editText);
+        editText = (EditText) findViewById(R.id.editText);
         Button send = (Button)findViewById(R.id.send_button);
 
         //relate the listView from java to the one created in xml
@@ -132,10 +133,14 @@ public class MainActivity extends Activity
                 //final EditText et = (EditText)findViewById(R.id.editText);
                 //Editable e = et.getText();
                 //String s = e.toString();
+
                 String s = editText.getText().toString();
 
                 //DatagramSocket socket;
-                 new messageSender().execute(s);
+                new messageSender().execute(s);
+                //editText.setText("");
+
+
                 /*
                 try
                 {
@@ -171,6 +176,11 @@ public class MainActivity extends Activity
             */
             }
         });
+
+        editText.setText("");
+
+
+
 
         Thread t = new Thread (new SocketListener ());
         t.start();
@@ -240,7 +250,10 @@ public class MainActivity extends Activity
                 byte[] buf = new byte[256];
 
                 //String outputLine = s; //txArea.getText ();
-                String s = "hello world";
+                //String s = "hello world";
+                String s = editText.getText().toString();
+
+
                 buf = s.getBytes ();
                 InetAddress address = InetAddress.getByName (TCPClient.SERVERIP);
 
@@ -248,6 +261,10 @@ public class MainActivity extends Activity
                 System.out.println ("About to send message");
                 socket.send (packet);
                 System.out.println ("Sent message");
+                s = "";
+                buf = null;
+
+
             }
             catch (SocketException e1)
             {

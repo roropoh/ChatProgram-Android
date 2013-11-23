@@ -13,6 +13,7 @@
   <component name="ChangeListManager">
     <list default="true" id="17a9c3cc-a52a-472b-98e5-8b0023dbf84d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatProgram/src/main/java/com/example/chatprogram/MainActivity.java" afterPath="$PROJECT_DIR$/ChatProgram/src/main/java/com/example/chatprogram/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatProgram/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/ChatProgram/src/main/res/layout/activity_main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ChatProgram.iws" />
@@ -80,10 +81,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ChatProgram/src/main/java/com/example/chatprogram/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="179" column="27" selection-start="5160" selection-end="5160" vertical-scroll-proportion="0.33285713" vertical-offset="2640" max-vertical-offset="4777">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="activity_main.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ChatProgram/src/main/res/layout/activity_main.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="9" selection-start="265" selection-end="265" vertical-scroll-proportion="-3.4" vertical-offset="0" max-vertical-offset="799">
+            <state line="29" column="43" selection-start="1207" selection-end="1215" vertical-scroll-proportion="-17.68" vertical-offset="51" max-vertical-offset="782">
               <folding />
             </state>
           </provider>
@@ -92,13 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ChatProgram/src/main/java/com/example/chatprogram/MainActivity.java">
+      <file leaf-file-name="MyCustomAdapter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ChatProgram/src/main/java/com/example/chatprogram/MyCustomAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="32" selection-start="32" selection-end="32" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4488">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="58" column="18" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.0" vertical-offset="456" max-vertical-offset="1122">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -106,7 +116,7 @@
       <file leaf-file-name="TCPClient.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ChatProgram/src/main/java/com/example/chatprogram/TCPClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="29" selection-start="67" selection-end="67" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1887">
+            <state line="16" column="40" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1887">
               <folding />
             </state>
           </provider>
@@ -139,9 +149,9 @@
       <list>
         <option value="$PROJECT_DIR$/ChatProgram/src/main/res/layout/list_item.xml" />
         <option value="$PROJECT_DIR$/ChatProgram/src/main/java/com/example/chatprogram/MyCustomAdapter.java" />
-        <option value="$PROJECT_DIR$/ChatProgram/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/ChatProgram/src/main/java/com/example/chatprogram/TCPClient.java" />
         <option value="$PROJECT_DIR$/ChatProgram/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/ChatProgram/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/ChatProgram/src/main/java/com/example/chatprogram/MainActivity.java" />
       </list>
     </option>
@@ -270,11 +280,11 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RunManager" selected="Android Application.MainActivity">
     <configuration default="false" name="MainActivity" type="AndroidRunConfigurationType" factoryName="Android Application" temporary="true">
@@ -443,7 +453,11 @@
       <created>1385094419334</created>
       <updated>1385094419334</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="test">
+      <created>1385094572012</created>
+      <updated>1385094572012</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -453,27 +467,27 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.67074525" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.6714761" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32925472" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16351502" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32925472" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2497332" sideWeight="0.67074525" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2497332" sideWeight="0.83648497" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -563,13 +577,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ChatProgram/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="48" selection-start="737" selection-end="737" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="799">
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ChatProgram/src/main/java/com/example/chatprogram/TCPClient.java">
@@ -605,20 +619,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ChatProgram/src/main/res/layout/list_item.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="42" selection-start="327" selection-end="327" vertical-scroll-proportion="-5.44" vertical-offset="0" max-vertical-offset="408">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChatProgram/src/main/java/com/example/chatprogram/MyCustomAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="18" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.70857143" vertical-offset="366" max-vertical-offset="1241">
-          <folding />
-        </state>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ChatProgram/src/main/AndroidManifest.xml">
@@ -628,26 +635,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChatProgram/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/ChatProgram/src/main/java/com/example/chatprogram/MyCustomAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="9" selection-start="265" selection-end="265" vertical-scroll-proportion="-3.4" vertical-offset="0" max-vertical-offset="799">
+        <state line="58" column="18" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.0" vertical-offset="456" max-vertical-offset="1122">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ChatProgram/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="43" selection-start="1207" selection-end="1215" vertical-scroll-proportion="-17.68" vertical-offset="51" max-vertical-offset="782">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ChatProgram/src/main/java/com/example/chatprogram/TCPClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="29" selection-start="67" selection-end="67" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1887">
+        <state line="16" column="40" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1887">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ChatProgram/src/main/java/com/example/chatprogram/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="32" selection-start="32" selection-end="32" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4488">
+        <state line="179" column="27" selection-start="5160" selection-end="5160" vertical-scroll-proportion="0.33285713" vertical-offset="2640" max-vertical-offset="4777">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
