@@ -1,7 +1,9 @@
 package com.example.chatprogram;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.net.wifi.WifiManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -29,6 +31,7 @@ public class MainActivity extends Activity
     private TCPClient mTcpClient;
     //public BufferedReader br;
     EditText editText;
+    String username;
 
 
     MulticastSocket socket;
@@ -103,6 +106,34 @@ public class MainActivity extends Activity
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
+
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+
+        alert.setTitle("Username");
+        alert.setMessage("Please enter a username");
+
+// Set an EditText view to get user input
+        final EditText input = new EditText(this);
+        alert.setView(input);
+
+        alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                username = input.getText().toString();
+
+                // Do something with value!
+            }
+        });
+        /*
+        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                // Canceled.
+            }
+        });
+        */
+
+        alert.show();
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -122,26 +153,21 @@ public class MainActivity extends Activity
         multicastLock.acquire();
 
 
-        send.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v)
-            {
-                if(editText.getText().toString() != null)
-                {
+        send.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (editText.getText().toString() != null) {
                     String s = editText.getText().toString();
 
                     //DatagramSocket socket;
                     new messageSender().execute(s);
-                    editText.setText("");
+
                 }
-
-
+                editText.setText("");
             }
         });
 
-
         // RESETS THE EDITTEXT BOX
-        editText.setText("");
+        //editText.setText("");
 
         Thread t = new Thread (new SocketListener ());
         t.start();
@@ -192,23 +218,37 @@ public class MainActivity extends Activity
     {
         protected String doInBackground(String... message)
         {
+
             try
             {
 
                 byte[] buf;
                 if(editText.getText().toString() != null)
                 {
-                    String s = editText.getText().toString();
-                    buf = s.getBytes ();
-                    InetAddress address = InetAddress.getByName (TCPClient.SERVERIP);
-                    System.out.println(s);
-                    DatagramPacket packet = new DatagramPacket (buf, buf.length, address, TCPClient.SERVERPORT);
 
-                    System.out.println ("About to send message");
 
-                    socket.send (packet);
-                    packet.setLength(0);
-                    System.out.println ("Sent message");
+                    String s = username + ": ";
+
+                    s += editText.getText().toString();
+
+                    if(s.length() != (username.length() + 2))
+                    {
+                        System.out.println("s.length()" + s.length());
+                        System.out.println("string: " + s);
+                        System.out.println("username length(): " + username.length());
+                        buf = s.getBytes ();
+                        InetAddress address = InetAddress.getByName (TCPClient.SERVERIP);
+
+                        DatagramPacket packet = new DatagramPacket (buf, buf.length, address, TCPClient.SERVERPORT);
+
+                        System.out.println ("About to send message");
+
+                        socket.send (packet);
+
+                        //packet.setLength(0);
+                        System.out.println ("Sent message");
+                    }
+
                     //s = "";
                 }
 
