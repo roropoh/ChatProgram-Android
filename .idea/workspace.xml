@@ -15,10 +15,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17a9c3cc-a52a-472b-98e5-8b0023dbf84d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatProgram/src/main/gen/com/example/chatprogram/BuildConfig.java" afterPath="$PROJECT_DIR$/ChatProgram/src/main/gen/com/example/chatprogram/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatProgram/src/main/java/com/example/chatprogram/MainActivity.java" afterPath="$PROJECT_DIR$/ChatProgram/src/main/java/com/example/chatprogram/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatProgram/src/main/main.iml" afterPath="$PROJECT_DIR$/ChatProgram/src/main/main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ChatProgram.iws" />
@@ -515,7 +511,11 @@
       <created>1385094572012</created>
       <updated>1385094572012</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fixed the send and receive for packets">
+      <created>1385202227647</created>
+      <updated>1385202227647</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
