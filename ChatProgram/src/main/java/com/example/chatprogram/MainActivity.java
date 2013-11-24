@@ -68,9 +68,9 @@ public class MainActivity extends Activity
 
                     recpacket = new DatagramPacket (recbuf, recbuf.length);
                     socket.receive (recpacket);
-                    System.out.println ("Received packet");
+                    //System.out.println ("Received packet");
                     String s = new String (recpacket.getData());
-
+                    s = s.trim();
                     CharSequence cs = t.getText ();
                     str = cs + "\r\n" +  s;
 
@@ -83,7 +83,7 @@ public class MainActivity extends Activity
                         public void run()
                         {
 
-                            int scrollAmount = t.getLayout().getLineTop(t.getLineCount()) - t.getHeight();
+                            int scrollAmount = t.getLayout().getLineTop(t.getLineCount()) - t.getHeight() ;
 
                             // if there is no need to scroll, scrollAmount will be <=0
                             if (scrollAmount > 0)
@@ -260,18 +260,18 @@ public class MainActivity extends Activity
 
                     if(s.length() != (username.length() + 2))
                     {
-                        System.out.println("s.length()" + s.length());
-                        System.out.println("string: " + s);
-                        System.out.println("username length(): " + username.length());
+                        //System.out.println("s.length()" + s.length());
+                        //System.out.println("string: " + s);
+                        //System.out.println("username length(): " + username.length());
                         buf = s.getBytes ();
                         InetAddress address = InetAddress.getByName (TCPClient.SERVERIP);
 
                         DatagramPacket packet = new DatagramPacket (buf, buf.length, address, TCPClient.SERVERPORT);
 
-                        System.out.println ("About to send message");
+                        //System.out.println ("About to send message");
 
                         socket.send (packet);
-                        System.out.println ("Sent message");
+                        //System.out.println ("Sent message");
                     }
                 }
 
