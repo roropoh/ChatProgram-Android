@@ -137,11 +137,18 @@ public class MainActivity extends Activity
         for (Account account : accounts) {
             if (emailPattern.matcher(account.name).matches()) {
                 String possibleEmail = account.name;
-                input.setText(possibleEmail, TextView.BufferType.EDITABLE);
+                String temp;
+
+                    temp = possibleEmail.substring(0, possibleEmail.indexOf("@"));
+
+                input.setText(temp, TextView.BufferType.EDITABLE);
 
             }
         }
+
         username = input.getText().toString();
+
+
 
         alert.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
@@ -149,14 +156,6 @@ public class MainActivity extends Activity
                 username = input.getText().toString();
             }
         });
-
-        /*
-        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                // Canceled.
-            }
-        });
-        */
 
         alert.show();
 
