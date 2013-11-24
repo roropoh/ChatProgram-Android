@@ -1,5 +1,7 @@
 package com.example.chatprogram;
 
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -9,6 +11,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +25,7 @@ import java.net.InetAddress;
 import java.net.MulticastSocket;
 import java.net.SocketException;
 import java.net.UnknownHostException;
+import java.util.regex.Pattern;
 //import java.util.ArrayList;
 
 public class MainActivity extends Activity
@@ -78,6 +82,7 @@ public class MainActivity extends Activity
                     {
                         public void run()
                         {
+
                             int scrollAmount = t.getLayout().getLineTop(t.getLineCount()) - t.getHeight();
 
                             // if there is no need to scroll, scrollAmount will be <=0
@@ -117,7 +122,6 @@ public class MainActivity extends Activity
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
-
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
 
         alert.setTitle("Username");
@@ -127,7 +131,19 @@ public class MainActivity extends Activity
         final EditText input = new EditText(this);
         alert.setView(input);
 
-        alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+        Pattern emailPattern = Patterns.EMAIL_ADDRESS; // API level 8+
+
+        Account[] accounts = AccountManager.get(this).getAccounts();
+        for (Account account : accounts) {
+            if (emailPattern.matcher(account.name).matches()) {
+                String possibleEmail = account.name;
+                input.setText(possibleEmail, TextView.BufferType.EDITABLE);
+
+            }
+        }
+        username = input.getText().toString();
+
+        alert.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
 
                 username = input.getText().toString();
@@ -143,6 +159,7 @@ public class MainActivity extends Activity
         */
 
         alert.show();
+
 
 
         super.onCreate(savedInstanceState);
@@ -255,12 +272,8 @@ public class MainActivity extends Activity
                         System.out.println ("About to send message");
 
                         socket.send (packet);
-
-                        //packet.setLength(0);
                         System.out.println ("Sent message");
                     }
-
-                    //s = "";
                 }
 
 
