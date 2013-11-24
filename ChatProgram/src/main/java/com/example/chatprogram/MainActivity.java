@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.net.wifi.WifiManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +15,7 @@ import android.widget.EditText;
 //import android.widget.ListView;
 import android.widget.TextView;
 
-import java.io.BufferedReader;
+//import java.io.BufferedReader;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.InetAddress;
@@ -28,7 +29,7 @@ public class MainActivity extends Activity
     //private ListView mList;
     //private ArrayList<String> arrayList;
     //private MyCustomAdapter mAdapter;
-    private TCPClient mTcpClient;
+    //private TCPClient mTcpClient;
     //public BufferedReader br;
     EditText editText;
     String username;
@@ -77,6 +78,16 @@ public class MainActivity extends Activity
                     {
                         public void run()
                         {
+                            int scrollAmount = t.getLayout().getLineTop(t.getLineCount()) - t.getHeight();
+
+                            // if there is no need to scroll, scrollAmount will be <=0
+                            if (scrollAmount > 0)
+                                t.scrollTo(0, scrollAmount + 42);
+                            else
+                                t.scrollTo(0, 0);
+
+                            t.setMovementMethod(new ScrollingMovementMethod());
+
                             t.setText(str);
                         }
                     }
@@ -112,17 +123,17 @@ public class MainActivity extends Activity
         alert.setTitle("Username");
         alert.setMessage("Please enter a username");
 
-// Set an EditText view to get user input
+        // Set an EditText view to get user input
         final EditText input = new EditText(this);
         alert.setView(input);
 
         alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
-                username = input.getText().toString();
 
-                // Do something with value!
+                username = input.getText().toString();
             }
         });
+
         /*
         alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
