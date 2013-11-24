@@ -15,10 +15,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-//import android.widget.ListView;
 import android.widget.TextView;
-
-//import java.io.BufferedReader;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.InetAddress;
@@ -26,15 +23,11 @@ import java.net.MulticastSocket;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.util.regex.Pattern;
-//import java.util.ArrayList;
 
 public class MainActivity extends Activity
 {
-    //private ListView mList;
-    //private ArrayList<String> arrayList;
-    //private MyCustomAdapter mAdapter;
-    //private TCPClient mTcpClient;
-    //public BufferedReader br;
+    public static final String SERVERIP = "224.1.1.1"; //your computer IP address
+    public static final int SERVERPORT = 4444;
     EditText editText;
     String username;
 
@@ -55,8 +48,8 @@ public class MainActivity extends Activity
             {
 
 
-                InetAddress sessAddr = InetAddress.getByName(TCPClient.SERVERIP);
-                socket = new MulticastSocket(TCPClient.SERVERPORT);
+                InetAddress sessAddr = InetAddress.getByName(SERVERIP);
+                socket = new MulticastSocket(SERVERPORT);
                 socket.joinGroup(sessAddr);
 
                 while (true)
@@ -164,16 +157,10 @@ public class MainActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //arrayList = new ArrayList<String>();
 
         editText = (EditText) findViewById(R.id.editText);
         Button send = (Button)findViewById(R.id.send_button);
- /*
-        //relate the listView from java to the one created in xml
-        mList = (ListView)findViewById(R.id.list);
-        mAdapter = new MyCustomAdapter(this, arrayList);
-        mList.setAdapter(mAdapter);
-*/
+
         WifiManager wifi = (WifiManager) getSystemService(Context.WIFI_SERVICE);
         multicastLock = wifi.createMulticastLock("multicastLock");
         multicastLock.setReferenceCounted(true);
@@ -193,53 +180,10 @@ public class MainActivity extends Activity
             }
         });
 
-        // RESETS THE EDITTEXT BOX
-        //editText.setText("");
-
         Thread t = new Thread (new SocketListener ());
         t.start();
 
         }
-
-    /*
-    public class connectTask extends AsyncTask<String,String,TCPClient> {
-
-        @Override
-        protected TCPClient doInBackground(String... message) {
-
-            //we create a TCPClient object and
-            mTcpClient = new TCPClient(new TCPClient.OnMessageReceived() {
-                @Override
-                //here the messageReceived method is implemented
-                public void messageReceived(String message) {
-                    //this method calls the onProgressUpdate
-                    publishProgress(message);
-                }
-            });
-            mTcpClient.run();
-
-            return null;
-        }
-
-        @Override
-        protected void onProgressUpdate(String... values) {
-            super.onProgressUpdate(values);
-
-            //in the arrayList we add the messaged received from server
-            //arrayList.add(values[0]);
-
-            // notify the adapter that the data set has changed. This means that new message received
-            // from server was added to the list
-            //mAdapter.notifyDataSetChanged();
-        }
-
-    }*/
-
-
-    /*
-    SEND FUNCTION
-     */
-
 
     public class messageSender extends AsyncTask<String, String, String>
     {
@@ -264,9 +208,9 @@ public class MainActivity extends Activity
                         //System.out.println("string: " + s);
                         //System.out.println("username length(): " + username.length());
                         buf = s.getBytes ();
-                        InetAddress address = InetAddress.getByName (TCPClient.SERVERIP);
+                        InetAddress address = InetAddress.getByName (SERVERIP);
 
-                        DatagramPacket packet = new DatagramPacket (buf, buf.length, address, TCPClient.SERVERPORT);
+                        DatagramPacket packet = new DatagramPacket (buf, buf.length, address, SERVERPORT);
 
                         //System.out.println ("About to send message");
 
@@ -291,9 +235,6 @@ public class MainActivity extends Activity
                 // TODO Auto-generated catch block
                 e3.printStackTrace();
             }
-
-
-
 
             return message[0];
         }
