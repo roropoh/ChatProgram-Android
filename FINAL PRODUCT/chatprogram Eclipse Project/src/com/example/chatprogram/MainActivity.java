@@ -35,6 +35,7 @@ public class MainActivity extends Activity
     MulticastSocket socket;
     WifiManager.MulticastLock multicastLock;
 
+    // Connecting to Socket
     class SocketListener implements Runnable
     {
         String str;
@@ -124,6 +125,7 @@ public class MainActivity extends Activity
         final EditText input = new EditText(this);
         alert.setView(input);
 
+        // Pulls the email address on the device itself (if any)
         Pattern emailPattern = Patterns.EMAIL_ADDRESS; // API level 8+
 
         Account[] accounts = AccountManager.get(this).getAccounts();
@@ -151,8 +153,6 @@ public class MainActivity extends Activity
         });
 
         alert.show();
-
-
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
